@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Request Blocking Extension",
+    "version": "1.0",
+    "description": "A simple request blocking Chrome extension.",
+    "permissions": [
+      "activeTab",
+      "webRequest",
+      "webRequestBlocking",
+      "<all_urls>"
+    ],
+    "icons": {
+      "48": "icon.png"
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "icon.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["popup.js"]
+      }
+    ],
+    "web_accessible_resources": ["popup.css"]
+  }
+  
